@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Adshead - Landing page</title>
+</head>
+
+<body>
+    <div id="header">
+        <h1>COS 452 - Ethan Adshead</h1>
+        <h3>Computer Graphics with WebGL2</h3>
+    </div>
+    <div id="main-content">
+    </div>
+    <style>
+        :root {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body,
+        html {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: antiquewhite;
+            gap: 30px;
+            padding: 10px;
+        }
+
+        #header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 50%;
+        }
+
+        .week-link {
+            font-size: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+    </style>
+    <script>
+        const mainContent = document.getElementById("main-content");
+        for (let i = 0; i < 16; i++) {
+            const weekLink = document.createElement("a");
+            const weekNumber = `${i + 1}`.padStart(2, "0");
+            weekLink.textContent = `Week ${weekNumber}`;
+            weekLink.href = `./week${weekNumber}/`;
+            weekLink.classList.add("week-link");
+            mainContent.appendChild(weekLink);
+        }
+    </script>
+</body>
+
+</html>
